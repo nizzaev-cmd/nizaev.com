@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ilia Nizaev — E-commerce, Marketplace &amp; Growth Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5EDDB;            /* sunnier cream */
+    --bg-2:#EBE0C7;
+    --bg-3:#1F1A14;          /* deep ink for inverted blocks */
+    --ink:#1B1612;
+    --ink-2:#3D342B;
+    --muted:#8C8175;
+    --line:rgba(27,22,18,.14);
+    --accent:#E25A2B;        /* punchy tangerine-terracotta */
+    --accent-deep:#B43C12;
+    --accent-2:#1F6F4A;      /* deep forest green */
+    --accent-3:#2D4FB3;      /* indigo for highlights */
+    --serif:'Instrument Serif', 'Times New Roman', serif;
+    --sans:'Manrope', ui-sans-serif, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{font-size:16px;line-height:1.55;font-weight:400;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;position:relative}
+  @media (max-width:680px){ .wrap{padding:0 20px} }
+
+  /* TOP BAR */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(12px);
+    background:color-mix(in oklab, var(--bg) 84%, transparent);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:24px;letter-spacing:.01em;white-space:nowrap}
+  .brand .dot{
+    width:14px;height:14px;border-radius:99px;background:var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 24%, transparent);
+    position:relative;
+  }
+  .brand .dot::after{
+    content:'';position:absolute;inset:-9px;border:1.5px dashed var(--accent);
+    border-radius:99px;opacity:.5;animation:spin 22s linear infinite;
+  }
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  nav.primary{display:flex;gap:28px;align-items:center}
+  nav.primary a{font-size:14px;color:var(--ink-2);transition:color .2s}
+  nav.primary a:hover{color:var(--accent)}
+  .lang{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:99px;padding:4px;background:color-mix(in oklab, var(--bg-2) 70%, transparent)}
+  .lang button{
+    appearance:none;border:0;background:transparent;font:inherit;
+    font-size:12px;letter-spacing:.08em;font-weight:600;text-transform:uppercase;
+    color:var(--ink-2);padding:6px 10px;border-radius:99px;cursor:pointer;
+  }
+  .lang button.is-active{background:var(--ink);color:var(--bg)}
+  @media (max-width:880px){ nav.primary > a:not(.cta){display:none} }
+
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--accent);color:#fff;padding:12px 20px;
+    border-radius:99px;font-size:14px;font-weight:600;
+    border:1px solid var(--accent);transition:transform .15s ease, background .2s, border-color .2s;
+    position:relative;
+  }
+  .cta:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff;transform:translateY(-1px)}
+  .cta.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .cta.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .cta .arr{display:inline-block;transition:transform .2s}
+  .cta:hover .arr{transform:translateX(3px)}
+
+  /* HERO */
+  .hero{padding:64px 0 110px;position:relative;overflow:visible}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:end}
+  @media (max-width:980px){ .hero-grid{grid-template-columns:1fr;gap:48px} }
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);font-weight:700
+  }
+  .eyebrow .pulse{width:8px;height:8px;border-radius:99px;background:var(--accent-2);box-shadow:0 0 0 0 color-mix(in oklab, var(--accent-2) 60%, transparent);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in oklab, var(--accent-2) 60%, transparent)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+  h1.hero-title{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(48px, 7.6vw, 112px);
+    line-height:.95;letter-spacing:-.012em;
+    margin:22px 0 28px;
+    text-wrap:balance;
+  }
+  h1.hero-title .pop{color:var(--accent);font-style:italic;position:relative;white-space:nowrap}
+  h1.hero-title .pop::after{
+    content:'';position:absolute;left:-3%;right:-3%;bottom:.05em;height:.18em;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 Q 25 2, 50 8 T 100 8 T 150 8 T 200 8' fill='none' stroke='%23E25A2B' stroke-width='3' stroke-linecap='round'/></svg>") center/100% 100% no-repeat;
+    opacity:.55;
+  }
+  h1.hero-title .pop2{color:var(--accent-2);font-style:italic}
+  h1.hero-title .pop3{color:var(--accent-3);font-style:italic}
+
+  .hero-sub{
+    font-size:clamp(17px, 1.4vw, 20px);line-height:1.55;
+    color:var(--ink-2);max-width:46ch;margin:0 0 36px;
+    text-wrap:pretty;
+  }
+  .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .meta{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:13px;margin-left:8px}
+  .meta .ok{display:inline-block;width:7px;height:7px;border-radius:99px;background:var(--accent-2)}
+
+  /* Portrait */
+  .portrait{position:relative;aspect-ratio: 4.5/5; max-width: 460px; margin-left:auto; width:100%}
+  .portrait .frame{
+    position:relative;width:100%;height:100%;
+    border-radius:280px 280px 18px 18px;
+    overflow:hidden;
+    background:linear-gradient(160deg, #D8CDB9 0%, #B7A790 60%, #9C8870 100%);
+    box-shadow: 0 30px 60px -30px rgba(40,20,10,.4), 0 2px 6px rgba(0,0,0,.08);
+  }
+  .portrait .frame img{
+    width:100%;height:100%;object-fit:cover;object-position: 50% 18%;
+    display:block;
+  }
+  .portrait .ring{
+    position:absolute;inset:-16px;border:1.5px dashed var(--line);border-radius:300px 300px 22px 22px;
+    pointer-events:none;
+  }
+  .portrait .badge{
+    position:absolute;left:-26px;bottom:50px;
+    background:var(--bg);border:1px solid var(--line);border-radius:99px;
+    padding:11px 18px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    box-shadow:0 14px 30px -16px rgba(0,0,0,.3);
+    display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink-2);
+    transform:rotate(-6deg);
+  }
+  .portrait .badge::before{content:'';width:7px;height:7px;border-radius:99px;background:var(--accent-2)}
+  .portrait .sticker{
+    position:absolute;right:-30px;top:30px;
+    width:120px;height:120px;border-radius:99px;
+    background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.1;text-align:center;
+    padding:18px;transform:rotate(8deg);
+    box-shadow:0 14px 28px -10px rgba(226,90,43,.5);
+    animation: bob 4.2s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:rotate(8deg) translateY(0)} 50%{transform:rotate(8deg) translateY(-6px)}}
+
+  /* Asterisks / decorations */
+  .deco{position:absolute;pointer-events:none;font-family:var(--serif);color:var(--accent);user-select:none}
+  .hero .deco-1{top:120px;right:42%;font-size:56px;transform:rotate(12deg);color:var(--accent-2);opacity:.65}
+  .hero .deco-2{bottom:60px;left:46%;font-size:36px;color:var(--accent);opacity:.7}
+
+  /* Marquee */
+  .strip{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--bg-2);overflow:hidden;
+  }
+  .strip-track{
+    display:flex;gap:48px;padding:20px 0;white-space:nowrap;
+    font-family:var(--serif);font-size:24px;color:var(--ink-2);letter-spacing:.01em;
+    animation:slide 42s linear infinite;
+  }
+  .strip-track span{display:inline-flex;align-items:center;gap:48px}
+  .strip-track span::after{content:'✦';color:var(--accent);font-size:14px;margin-left:48px}
+  @keyframes slide{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* Stats */
+  .stats{padding:84px 0 60px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  @media (max-width:880px){ .stats-grid{grid-template-columns:repeat(2,1fr)} }
+  .stat{padding:24px 4px;border-top:2px solid var(--ink);position:relative}
+  .stat:nth-child(2n){border-top-color:var(--accent)}
+  .stat:nth-child(3n){border-top-color:var(--accent-2)}
+  .stat .n{font-family:var(--serif);font-size:clamp(48px, 5vw, 72px);line-height:1;letter-spacing:-.01em}
+  .stat .n em{font-style:italic;color:var(--accent)}
+  .stat:nth-child(2) .n em{color:var(--accent-2)}
+  .stat:nth-child(3) .n em{color:var(--accent-3)}
+  .stat .l{margin-top:14px;font-size:13px;color:var(--ink-2);max-width:24ch;line-height:1.5}
+
+  /* Section header */
+  .section{padding:104px 0;border-top:1px solid var(--line);position:relative}
+  .section-head{display:grid;grid-template-columns:200px 1fr;gap:48px;margin-bottom:56px;align-items:start}
+  @media (max-width:780px){ .section-head{grid-template-columns:1fr;gap:18px} }
+  .sec-num{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:24px}
+  .sec-num::before{content:'§ '}
+  .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(36px, 4.4vw, 60px);line-height:1.02;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  .sec-title em{font-style:italic;color:var(--accent)}
+  .sec-title .grn{color:var(--accent-2);font-style:italic}
+  .sec-kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px}
+  @media (max-width:880px){ .about-grid{grid-template-columns:1fr} }
+  .about p{font-size:18px;line-height:1.6;color:var(--ink-2);margin:0 0 18px;max-width:62ch;text-wrap:pretty}
+  .about p.lead{font-family:var(--serif);font-size:30px;line-height:1.2;color:var(--ink);font-weight:400;margin-bottom:28px}
+  .about p.lead em{color:var(--accent);font-style:italic}
+  .about-list{list-style:none;padding:0;margin:32px 0 0;display:flex;flex-direction:column;gap:0}
+  .about-list li{padding:20px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:36px 1fr;gap:18px;align-items:start}
+  .about-list li:last-child{border-bottom:1px solid var(--line)}
+  .about-list .ix{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:20px;line-height:1.5}
+  .about-list .t{font-size:15px;color:var(--ink);font-weight:600}
+  .about-list .d{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.5}
+
+  /* Expertise grid */
+  .exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  @media (max-width:780px){ .exp-grid{grid-template-columns:1fr} }
+  .exp{background:var(--bg);padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:background .25s;position:relative}
+  .exp:hover{background:var(--bg-2)}
+  .exp .h{display:flex;align-items:baseline;gap:14px}
+  .exp .h .num{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:16px}
+  .exp:nth-child(2) .h .num{color:var(--accent-2)}
+  .exp:nth-child(3) .h .num{color:var(--accent-3)}
+  .exp:nth-child(4) .h .num{color:var(--accent-deep)}
+  .exp .h .t{font-family:var(--serif);font-size:28px;line-height:1.1;letter-spacing:-.005em}
+  .exp p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.6}
+  .exp .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .exp .tags span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);border-radius:99px;padding:5px 11px;font-weight:600;background:color-mix(in oklab, var(--bg-2) 50%, transparent)}
+
+  /* US focus card */
+  .us-focus{
+    margin-top:48px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;
+    padding:32px 36px;border-radius:24px;
+    background:linear-gradient(135deg, var(--bg-3) 0%, #2D261C 100%);color:var(--bg);
+    position:relative;overflow:hidden;
+  }
+  @media (max-width:780px){ .us-focus{grid-template-columns:1fr;text-align:left} }
+  .us-focus::after{
+    content:'★';position:absolute;right:-30px;bottom:-50px;font-size:240px;color:var(--accent);opacity:.12;font-family:var(--serif);
+    line-height:1;
+  }
+  .us-focus .flag-big{
+    font-size:64px;line-height:1;filter: drop-shadow(0 4px 12px rgba(0,0,0,.3));
+  }
+  .us-focus .uft{font-family:var(--serif);font-size:32px;line-height:1.1;margin:0 0 8px}
+  .us-focus .uft em{color:#FFB18A;font-style:italic}
+  .us-focus .ufd{color:rgba(245,237,219,.7);font-size:14px;margin:0;max-width:50ch}
+  .us-focus .ufb{
+    background:var(--accent);color:#fff;border-radius:99px;padding:8px 16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  }
+  .us-focus .ufb::before{content:'';width:6px;height:6px;border-radius:99px;background:#fff;animation:pulse 2.2s infinite}
+
+  /* Fit / Who this is for */
+  .fit-section{background:var(--bg);position:relative}
+  .fit-grid{display:grid;grid-template-columns:1fr;gap:48px}
+  .fit-lead{font-family:var(--serif);font-size:clamp(22px, 2.2vw, 28px);line-height:1.3;color:var(--ink-2);max-width:62ch;margin:0;text-wrap:pretty}
+  .fit-cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:780px){ .fit-cols{grid-template-columns:1fr} }
+  .fit-card{padding:32px 28px;border-radius:18px;border:1px solid var(--line);background:var(--bg)}
+  .fit-card.good{background:linear-gradient(180deg, color-mix(in oklab, var(--accent-2) 8%, var(--bg)) 0%, var(--bg) 80%);border-color:color-mix(in oklab, var(--accent-2) 30%, var(--line))}
+  .fit-card.not{background:var(--bg-2)}
+  .fit-card .fit-h{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:24px;line-height:1.1;margin-bottom:20px;color:var(--ink)}
+  .fit-card .fit-mark{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:99px;background:var(--accent-2);color:#fff;font-size:18px;font-weight:700;box-shadow:0 6px 14px -6px color-mix(in oklab, var(--accent-2) 60%, transparent)}
+  .fit-card .fit-mark.cross{background:var(--muted);box-shadow:none;font-size:22px;line-height:1}
+  .fit-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0}
+  .fit-card li{padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--ink-2);line-height:1.5}
+  .fit-card li:first-child{border-top:0;padding-top:0}
+  .fit-card.good li{padding-left:22px;position:relative}
+  .fit-card.good li::before{content:'→';position:absolute;left:0;color:var(--accent-2);font-weight:700}
+  .fit-card.not li{color:var(--muted);text-decoration:line-through;text-decoration-color:color-mix(in oklab, var(--muted) 40%, transparent);text-decoration-thickness:1px}
+
+  /* Services */
+  #services{background:var(--bg-2);position:relative}
+  #services::before{
+    content:'★ ★ ★';position:absolute;top:36px;right:32px;font-family:var(--serif);color:var(--accent);font-size:22px;letter-spacing:8px;opacity:.6;
+  }
+  .svc-list{display:flex;flex-direction:column;gap:0}
+  .svc{
+    display:grid;grid-template-columns:80px 1fr 280px 200px;gap:32px;
+    padding:36px 0;border-top:1px solid var(--line);align-items:center;
+    transition:padding .25s, background .25s;position:relative;
+  }
+  .svc:last-child{border-bottom:1px solid var(--line)}
+  .svc:hover{padding-left:14px}
+  .svc .ix{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:28px}
+  .svc:nth-child(2) .ix{color:var(--accent-2)}
+  .svc:nth-child(3) .ix{color:var(--accent-3)}
+  .svc:nth-child(4) .ix{color:var(--accent-deep)}
+  .svc .t{font-family:var(--serif);font-size:32px;line-height:1.08;letter-spacing:-.005em}
+  .svc .d{font-size:14px;color:var(--ink-2);line-height:1.55;max-width:46ch;margin-top:8px}
+  .svc .price{font-family:var(--serif);font-size:48px;line-height:1;text-align:right;letter-spacing:-.01em}
+  .svc:nth-child(1) .price{color:var(--accent)}
+  .svc:nth-child(2) .price{color:var(--accent-2)}
+  .svc:nth-child(3) .price{color:var(--accent-3)}
+  .svc:nth-child(4) .price{color:var(--accent-deep)}
+  .svc .price .unit{font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px}
+  .svc .go{justify-self:end}
+  @media (max-width:980px){
+    .svc{grid-template-columns:auto 1fr;gap:18px 24px}
+    .svc .ix{grid-row:1/2;grid-column:1/2}
+    .svc .body{grid-row:1/2;grid-column:2/3}
+    .svc .price{grid-row:2/3;grid-column:1/3;text-align:left}
+    .svc .go{grid-row:3/4;grid-column:1/3;justify-self:start}
+  }
+  .svc-body details{margin-top:14px}
+  .svc-body summary{cursor:pointer;font-size:13px;color:var(--accent);letter-spacing:.04em;list-style:none;display:inline-flex;align-items:center;gap:6px;font-weight:700}
+  .svc-body summary::-webkit-details-marker{display:none}
+  .svc-body summary::after{content:'+';font-size:14px;transition:transform .2s}
+  .svc-body details[open] summary::after{transform:rotate(45deg)}
+  .svc-body details ul{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+  .svc-body details li{padding-left:22px;position:relative;font-size:14px;color:var(--ink-2)}
+  .svc-body details li::before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700}
+
+  /* Process — with growth chart background */
+  #process{position:relative;overflow:hidden}
+  .proc-bg{
+    position:absolute;inset:0;pointer-events:none;
+  }
+  .proc-bg svg{width:100%;height:100%}
+  .proc-grid-bg{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right, rgba(27,22,18,.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27,22,18,.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,0));
+    pointer-events:none;
+  }
+  .proc{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;z-index:2;
+    margin-top:32px;
+  }
+  @media (max-width:880px){ .proc{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:540px){ .proc{grid-template-columns:1fr} }
+  .step{
+    padding:36px 24px 36px 0;border-top:2px solid var(--ink);
+    position:relative;background:transparent;
+  }
+  .step:nth-child(1){border-top-color:var(--ink)}
+  .step:nth-child(2){border-top-color:var(--accent-3)}
+  .step:nth-child(3){border-top-color:var(--accent-2)}
+  .step:nth-child(4){border-top-color:var(--accent)}
+  .step .n{
+    font-family:var(--serif);font-style:italic;color:var(--accent);font-size:18px;display:flex;align-items:center;gap:10px;
+    margin-bottom:24px;
+  }
+  .step .n::before{
+    content:'';display:inline-block;width:14px;height:14px;border-radius:99px;background:var(--ink);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .step:nth-child(2) .n::before{background:var(--accent-3)}
+  .step:nth-child(3) .n::before{background:var(--accent-2)}
+  .step:nth-child(4) .n::before{background:var(--accent)}
+  .step:nth-child(2) .n{color:var(--accent-3)}
+  .step:nth-child(3) .n{color:var(--accent-2)}
+  .step:nth-child(4) .n{color:var(--accent)}
+  .step .t{font-family:var(--serif);font-size:26px;line-height:1.1;margin-bottom:10px;color:var(--ink)}
+  .step .d{font-size:14px;color:var(--ink-2);line-height:1.55}
+  .step .metric{
+    margin-top:18px;font-family:var(--serif);font-size:22px;color:var(--ink-2);
+    display:inline-flex;align-items:baseline;gap:8px;
+    padding:6px 14px;border-radius:99px;background:var(--bg-2);border:1px solid var(--line);
+  }
+  .step .metric .arrow{color:var(--accent-2);font-size:16px}
+  .step:nth-child(2) .metric .arrow{color:var(--accent-3)}
+  .step:nth-child(3) .metric .arrow{color:var(--accent-2)}
+  .step:nth-child(4) .metric .arrow{color:var(--accent)}
+
+  /* CTA banner */
+  .cta-banner{
+    margin:0;padding:96px 0;
+    background:var(--bg-3);color:var(--bg);
+    border-top:1px solid var(--ink);position:relative;overflow:hidden;
+  }
+  .cta-banner::before{
+    content:'';position:absolute;width:600px;height:600px;border-radius:99px;
+    background:radial-gradient(circle, color-mix(in oklab, var(--accent) 30%, transparent) 0%, transparent 70%);
+    top:-300px;right:-200px;
+  }
+  .cta-banner::after{
+    content:'';position:absolute;width:400px;height:400px;border-radius:99px;
+    background:radial-gradient(circle, color-mix(in oklab, var(--accent-3) 30%, transparent) 0%, transparent 70%);
+    bottom:-200px;left:-100px;
+  }
+  .cta-banner .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;position:relative;z-index:2}
+  @media (max-width:880px){ .cta-banner .wrap{grid-template-columns:1fr} }
+  .cta-banner h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px, 5vw, 72px);line-height:1;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  .cta-banner h2 em{font-style:italic;color:#FFB18A}
+  .cta-banner p{color:rgba(245,237,219,.75);max-width:46ch;margin:0 0 24px;font-size:16px}
+  .cta-banner .cta{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .cta-banner .cta:hover{background:#fff;color:var(--ink);border-color:#fff}
+  .cta-banner .cta.ghost{background:transparent;color:var(--bg);border-color:rgba(245,237,219,.4)}
+  .cta-banner .cta.ghost:hover{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+
+  /* Contact form */
+  #contact{padding-bottom:64px}
+  .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:880px}
+  @media (max-width:680px){ .form-grid{grid-template-columns:1fr} }
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .field input, .field select, .field textarea{
+    appearance:none;background:var(--bg);border:1px solid var(--line);border-radius:8px;
+    padding:14px 16px;font:inherit;font-size:15px;color:var(--ink);
+    transition:border-color .2s, background .2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+  .field textarea{min-height:140px;resize:vertical;font-family:inherit}
+  .form-actions{display:flex;align-items:center;gap:16px;margin-top:18px;flex-wrap:wrap}
+  .note{font-size:12px;color:var(--muted)}
+
+  /* Footer */
+  footer{padding:56px 0 64px;border-top:1px solid var(--line);background:var(--bg)}
+  .foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;align-items:start}
+  @media (max-width:780px){ .foot{grid-template-columns:1fr 1fr} }
+  .foot h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 14px}
+  .foot a{display:block;color:var(--ink-2);font-size:14px;padding:4px 0}
+  .foot a:hover{color:var(--accent)}
+  .copy{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:40px;padding-top:24px;color:var(--muted);font-size:12px;flex-wrap:wrap;gap:12px}
+
+  .hide{display:none !important}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#">
+      <span class="dot"></span>
+      <span>Ilia Nizaev</span>
+    </a>
+    <nav class="primary">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+      <a href="#fit" data-i18n="nav.fit">Fit</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <div class="lang" role="tablist" aria-label="Language">
+        <button data-lang="en" class="is-active">EN</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="ru">RU</button>
+      </div>
+      <a class="cta" href="#contact" data-i18n="nav.cta">Book a call <span class="arr">→</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span><span data-i18n="hero.eyebrow">Now booking · US market focus</span></span>
+      <h1 class="hero-title" data-i18n-html="hero.title">
+        I <span class="pop">launch</span>, <span class="pop2">scale</span> and <span class="pop3">amplify</span> e-commerce brands.
+      </h1>
+      <p class="hero-sub" data-i18n="hero.sub">Я Илья — предприниматель и консультант с 10+ годами опыта в продукте, бренде и каналах продаж. Помогаю селлерам и брендам выводить трендовые SKU и заходить на рынок США — крупнейший e-commerce-рынок в мире.</p>
+      <div class="hero-cta-row">
+        <a class="cta" href="#services" data-i18n="hero.cta1">See services <span class="arr">→</span></a>
+        <a class="cta ghost" href="#contact" data-i18n="hero.cta2">Book a 30-min call</a>
+        <div class="meta"><span class="ok"></span> <span data-i18n="hero.avail">Open for new projects</span></div>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="frame">
+        <img src="assets/portrait.jpg" alt="Ilia Nizaev portrait" />
+      </div>
+      <div class="ring"></div>
+      <div class="sticker"><span data-i18n-html="hero.sticker">US Market<br/>Specialist ★</span></div>
+      <div class="badge"><span data-i18n="hero.badge">10+ years · 7-figure brand built</span></div>
+    </div>
+    <span class="deco deco-1">✺</span>
+    <span class="deco deco-2">✦</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Amazon US</span><span>TikTok Shop US</span><span>Shopify / DTC</span><span>Wildberries</span><span>Ozon</span><span>Lamoda</span><span>Amazon US</span><span>TikTok Shop US</span><span>Shopify / DTC</span><span>Wildberries</span><span>Ozon</span><span>Lamoda</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="n">10<em>+</em></div><div class="l" data-i18n="stat.1">years building e-commerce brands end-to-end</div></div>
+    <div class="stat"><div class="n">7<em>fig.</em></div><div class="l" data-i18n="stat.2">turnover scaled from zero on own accessory brand</div></div>
+    <div class="stat"><div class="n">#1<em>.</em></div><div class="l" data-i18n="stat.3">market in focus — the United States</div></div>
+    <div class="stat"><div class="n">500<em>+</em></div><div class="l" data-i18n="stat.4">SKUs designed, sourced, launched &amp; iterated</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num">01</div>
+      <div>
+        <div class="sec-kicker" data-i18n="about.kicker">About</div>
+        <h2 class="sec-title" data-i18n-html="about.title">Hands-on e-commerce consulting from a founder who has <em>walked the path from launch to scale.</em></h2>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about">
+        <p class="lead" data-i18n-html="about.lead">
+          I built a women's accessories brand from a single SKU to <em>seven-figure turnover</em> — owning product, design, manufacturing, packaging, marketplaces, wholesale, logistics and the launch into the United States.
+        </p>
+        <p data-i18n="about.p1">Это значит, что когда мы говорим о вашем бизнесе, я уже знаю, как влияет на P&amp;L снижение возвратов на 2%, почему фото карточки 1080×1440 конвертит лучше, во что реально обходится запуск на Amazon US из-за рубежа и какие детали TikTok Shop важны, когда вы стартуете с нуля.</p>
+        <p data-i18n="about.p2">
+          I work with founders who don't have time to learn this the slow way — and with teams that need a senior operator to plug in for a quarter and move the metrics.
+        </p>
+      </div>
+      <ul class="about-list">
+        <li><span class="ix">i</span><div><div class="t" data-i18n="about.l1.t">Built &amp; scaled an own brand</div><div class="d" data-i18n="about.l1.d">From concept and packaging to wholesale and marketplaces.</div></div></li>
+        <li><span class="ix">ii</span><div><div class="t" data-i18n="about.l2.t">China sourcing &amp; contract manufacturing</div><div class="d" data-i18n="about.l2.d">Suppliers, QC, labeling, imports, B2B shipments.</div></div></li>
+        <li><span class="ix">iii</span><div><div class="t" data-i18n="about.l3.t">Trend-to-SKU operator</div><div class="d" data-i18n="about.l3.d">Demand signals → product → test → scale.</div></div></li>
+        <li><span class="ix">iv</span><div><div class="t" data-i18n="about.l4.t">US market launches</div><div class="d" data-i18n="about.l4.d">Amazon, TikTok Shop and Shopify DTC with disciplined unit economics.</div></div></li>
+        <li><span class="ix">v</span><div><div class="t" data-i18n="about.l5.t">Глаз дизайнера, дотошность финансиста</div><div class="d" data-i18n="about.l5.d">10+ years in branding, packaging, ad creative &amp; product cards.</div></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="section" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num">02</div>
+      <div>
+        <div class="sec-kicker" data-i18n="exp.kicker">Expertise</div>
+        <h2 class="sec-title" data-i18n-html="exp.title">Five things I do <em>better than most.</em></h2>
+      </div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp">
+        <div class="h"><span class="num">i</span><span class="t" data-i18n="exp.1.t">Marketplace &amp; e-commerce operations</span></div>
+        <p data-i18n="exp.1.d">Listings, pricing, logistics, returns, commissions, unit economics and assortment matrix — across high-competition categories where speed-to-shelf wins.</p>
+        <div class="tags"><span>Amazon</span><span>TikTok Shop</span><span>Wildberries</span><span>Ozon</span><span>Lamoda</span></div>
+      </div>
+      <div class="exp">
+        <div class="h"><span class="num">ii</span><span class="t" data-i18n="exp.2.t">Product &amp; trend strategy</span></div>
+        <p data-i18n="exp.2.d">Turning trends into commercial SKUs. The pipeline: trend → demand check → product → test → scale.</p>
+        <div class="tags"><span>Trend research</span><span>SKU design</span><span>Testing</span></div>
+      </div>
+      <div class="exp">
+        <div class="h"><span class="num">iii</span><span class="t" data-i18n="exp.3.t">US market entry</span></div>
+        <p data-i18n="exp.3.d">Практический опыт запусков в США — Amazon, TikTok Shop US, Shopify/DTC, инфлюенсеры, локальные платежи, склады, схемы импорта и готовый пул надежных партнеров.</p>
+        <div class="tags"><span>Amazon US</span><span>TikTok Shop US</span><span>Shopify</span><span>DTC</span></div>
+      </div>
+      <div class="exp">
+        <div class="h"><span class="num">iv</span><span class="t" data-i18n="exp.4.t">Branding, design &amp; packaging</span></div>
+        <p data-i18n="exp.4.d">10+ лет в бренде и креативе: айдентика, упаковка, карточки, коллекции, digital и реклама — дизайн, который растит конверсию и снижает возвраты.</p>
+        <div class="tags"><span>Identity</span><span>Packaging</span><span>Cards</span><span>Ads</span></div>
+      </div>
+      <div class="exp" style="grid-column:1/-1">
+        <div class="h"><span class="num">v</span><span class="t" data-i18n="exp.5.t">Fractional Head of E-commerce</span></div>
+        <p data-i18n="exp.5.d">Plugged in part-time as a senior operator: strategy, team, contractors, metrics, growth — for the quarters when you need a builder, not another adviser.</p>
+      </div>
+    </div>
+
+    <!-- US Focus card -->
+    <div class="us-focus">
+      <div class="flag-big">🇺🇸</div>
+      <div>
+        <div class="sec-kicker" style="color:rgba(245,237,219,.55);margin-bottom:8px" data-i18n="us.kicker">One market in focus</div>
+        <h3 class="uft" data-i18n-html="us.title">The United States — <em>the world's largest e-commerce arena.</em></h3>
+        <p class="ufd" data-i18n="us.desc">I focus on bringing brands and products into the US — because that's where the ceiling is highest. Amazon, TikTok Shop US, Shopify DTC, US fulfillment and import paths — all under one roof.</p>
+      </div>
+      <div class="ufb"><span data-i18n="us.badge">100% US Focused</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FIT / WHO THIS IS FOR -->
+<section class="section fit-section" id="fit">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num">03</div>
+      <div>
+        <div class="sec-kicker" data-i18n="fit.kicker">Who this is for</div>
+        <h2 class="sec-title" data-i18n-html="fit.title">My focus: taking products <em>from $0 to $1M</em> a year in revenue.</h2>
+      </div>
+    </div>
+    <div class="fit-grid">
+      <p class="fit-lead" data-i18n="fit.lead">That's the journey I've walked with my own brand. It's also the only journey I claim to know cold. If you're past $1M ARR and looking for the next 10x, I'm not your person — and I'll tell you in the first call.</p>
+      <div class="fit-cols">
+        <div class="fit-card good">
+          <div class="fit-h"><span class="fit-mark">✓</span> <span data-i18n="fit.good.t">A good fit</span></div>
+          <ul>
+            <li data-i18n="fit.good.1">Early-stage e-commerce brands &amp; founders</li>
+            <li data-i18n="fit.good.2">Products doing $0–$50K/month, aiming for $1M/year</li>
+            <li data-i18n="fit.good.3">First serious US launch (Amazon, TikTok Shop, Shopify)</li>
+            <li data-i18n="fit.good.4">Founders who want a builder, not just an adviser</li>
+          </ul>
+        </div>
+        <div class="fit-card not">
+          <div class="fit-h"><span class="fit-mark cross">×</span> <span data-i18n="fit.not.t">Not the right fit</span></div>
+          <ul>
+            <li data-i18n="fit.not.1">Already past $1M ARR, pushing toward $10M+</li>
+            <li data-i18n="fit.not.2">Enterprise or large-scale operations</li>
+            <li data-i18n="fit.not.3">Pure brand consulting with no commercial execution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num">04</div>
+      <div>
+        <div class="sec-kicker" data-i18n="svc.kicker">Services &amp; pricing</div>
+        <h2 class="sec-title" data-i18n-html="svc.title">Four ways to work together — <em>from a single call to a full launch.</em></h2>
+      </div>
+    </div>
+
+    <div class="svc-list">
+
+      <article class="svc">
+        <div class="ix">i</div>
+        <div class="svc-body body">
+          <div class="t" data-i18n="svc.1.t">30-minute consultation</div>
+          <div class="d" data-i18n="svc.1.d">Короткая консультация по конкретному вопросу — продукт, канал, цены, поставки, запуск. Вы приходите с вопросом — уходите с направлением.</div>
+        </div>
+        <div class="price">€50<span class="unit" data-i18n="svc.1.unit">flat · 30 min</span></div>
+        <a class="cta go" href="#contact" data-i18n="svc.book">Book now <span class="arr">→</span></a>
+      </article>
+
+      <article class="svc">
+        <div class="ix">ii</div>
+        <div class="svc-body body">
+          <div class="t" data-i18n="svc.2.t">E-commerce growth audit</div>
+          <div class="d" data-i18n="svc.2.d">A structured review of your business — assortment, margins, channels, marketplaces, returns, fulfilment — to surface the products that actually make money and the bottlenecks holding you back.</div>
+          <details>
+            <summary data-i18n="svc.included">What's included</summary>
+            <ul>
+              <li data-i18n="svc.2.l1">Assortment &amp; SKU analysis</li>
+              <li data-i18n="svc.2.l2">Margin &amp; profitability breakdown</li>
+              <li data-i18n="svc.2.l3">Sales channel review</li>
+              <li data-i18n="svc.2.l4">Website / Shopify / marketplace audit</li>
+              <li data-i18n="svc.2.l5">Pricing, returns &amp; fulfilment check</li>
+              <li data-i18n="svc.2.l6">Top profit-driving products identified</li>
+              <li data-i18n="svc.2.l7">Growth bottlenecks &amp; next steps</li>
+            </ul>
+          </details>
+        </div>
+        <div class="price">€800<span class="unit" data-i18n="svc.2.unit">ИЩЕМ СЛАБЫЕ МЕСТА</span></div>
+        <a class="cta ghost go" href="#contact" data-i18n="svc.start">Start audit <span class="arr">→</span></a>
+      </article>
+
+      <article class="svc">
+        <div class="ix">iii</div>
+        <div class="svc-body body">
+          <div class="t" data-i18n="svc.3.t">Scaling &amp; entering the US market</div>
+          <div class="d" data-i18n="svc.3.d">A go-to-market plan for the US — assortment adaptation, pricing, marketplace selection, fulfilment, unit economics and a disciplined MVP launch plan.</div>
+          <details>
+            <summary data-i18n="svc.included">What's included</summary>
+            <ul>
+              <li data-i18n="svc.3.l1">US channel selection (Amazon / TikTok Shop / Shopify)</li>
+              <li data-i18n="svc.3.l2">Assortment adaptation</li>
+              <li data-i18n="svc.3.l3">US pricing strategy</li>
+              <li data-i18n="svc.3.l4">Marketplace analysis</li>
+              <li data-i18n="svc.3.l5">US fulfilment &amp; logistics</li>
+              <li data-i18n="svc.3.l6">Offer localisation</li>
+              <li data-i18n="svc.3.l7">Unit economics calculation</li>
+              <li data-i18n="svc.3.l8">Test-launch plan</li>
+            </ul>
+          </details>
+        </div>
+        <div class="price">€1,600<span class="unit" data-i18n="svc.3.unit">strategy package</span></div>
+        <a class="cta ghost go" href="#contact" data-i18n="svc.plan">Plan launch <span class="arr">→</span></a>
+      </article>
+
+      <article class="svc">
+        <div class="ix">iv</div>
+        <div class="svc-body body">
+          <div class="t" data-i18n="svc.4.t">Full product launch — concept to live sales</div>
+          <div class="d" data-i18n="svc.4.d">Под ключ: беру продукт поставщика и вывожу его в e-commerce. Аудитория, ассортимент, брендинг, интернет-магазин, платежи, реклама, маркет-плейс — до первых заказов.</div>
+          <details>
+            <summary data-i18n="svc.included">What's included</summary>
+            <ul>
+              <li data-i18n="svc.4.l1">Target-audience definition</li>
+              <li data-i18n="svc.4.l2">Assortment matrix</li>
+              <li data-i18n="svc.4.l3">Branding &amp; visual identity</li>
+              <li data-i18n="svc.4.l4">Online shop setup (Shopify / equivalent)</li>
+              <li data-i18n="svc.4.l5">Payments integration</li>
+              <li data-i18n="svc.4.l6">Instagram &amp; paid social launch</li>
+              <li data-i18n="svc.4.l7">Amazon onboarding &amp; first shipment</li>
+              <li data-i18n="svc.4.l8">First-sales milestone</li>
+            </ul>
+          </details>
+        </div>
+        <div class="price">€2,800<span class="unit" data-i18n="svc.4.unit">end-to-end</span></div>
+        <a class="cta go" href="#contact" data-i18n="svc.kickoff">Kick off <span class="arr">→</span></a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="proc-grid-bg"></div>
+  <div class="proc-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 360" preserveAspectRatio="none" style="position:absolute;left:0;right:0;bottom:80px;width:100%;height:360px">
+      <!-- Area fill under growth curve -->
+      <defs>
+        <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#E25A2B" stop-opacity="0.16"/>
+          <stop offset="100%" stop-color="#E25A2B" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M 0,330 L 60,310 L 180,290 Q 260,280 320,260 L 420,240 Q 500,225 580,200 L 700,170 Q 780,150 860,118 L 980,85 Q 1080,55 1200,25 L 1200,360 L 0,360 Z" fill="url(#growthFill)"/>
+      <!-- Growth curve line -->
+      <path d="M 0,330 L 60,310 L 180,290 Q 260,280 320,260 L 420,240 Q 500,225 580,200 L 700,170 Q 780,150 860,118 L 980,85 Q 1080,55 1200,25" fill="none" stroke="#E25A2B" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+      <!-- Data points -->
+      <g>
+        <circle cx="150" cy="295" r="6" fill="#1B1612"/>
+        <circle cx="150" cy="295" r="11" fill="none" stroke="#1B1612" stroke-width="1.5" opacity=".3"/>
+        <circle cx="450" cy="232" r="6" fill="#2D4FB3"/>
+        <circle cx="450" cy="232" r="11" fill="none" stroke="#2D4FB3" stroke-width="1.5" opacity=".3"/>
+        <circle cx="780" cy="148" r="6" fill="#1F6F4A"/>
+        <circle cx="780" cy="148" r="11" fill="none" stroke="#1F6F4A" stroke-width="1.5" opacity=".3"/>
+        <circle cx="1090" cy="52" r="8" fill="#E25A2B"/>
+        <circle cx="1090" cy="52" r="14" fill="none" stroke="#E25A2B" stroke-width="2" opacity=".4"/>
+        <circle cx="1090" cy="52" r="22" fill="none" stroke="#E25A2B" stroke-width="1.5" opacity=".2"/>
+      </g>
+      <!-- gridlines (faint) -->
+      <g opacity=".18" stroke="#1B1612" stroke-width="1" stroke-dasharray="2 6">
+        <line x1="0" y1="80" x2="1200" y2="80"/>
+        <line x1="0" y1="160" x2="1200" y2="160"/>
+        <line x1="0" y1="240" x2="1200" y2="240"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <div class="section-head">
+      <div class="sec-num">05</div>
+      <div>
+        <div class="sec-kicker" data-i18n="proc.kicker">How we work</div>
+        <h2 class="sec-title" data-i18n-html="proc.title">From the first call <em>to metrics growth.</em></h2>
+      </div>
+    </div>
+    <div class="proc">
+      <div class="step">
+        <span class="n" data-i18n="proc.1.n">Step 01</span>
+        <div class="t" data-i18n="proc.1.t">Intro call</div>
+        <div class="d" data-i18n="proc.1.d">30-min call to understand the business, the question and where the lever sits.</div>
+        <span class="metric"><span data-i18n="proc.1.m">Baseline</span> <span class="arrow">●</span></span>
+      </div>
+      <div class="step">
+        <span class="n" data-i18n="proc.2.n">Step 02</span>
+        <div class="t" data-i18n="proc.2.t">Audit &amp; proposal</div>
+        <div class="d" data-i18n="proc.2.d">Диагностика текущего состояния, ищем слабые места и инструмент, которым будем пробивать потолок.</div>
+        <span class="metric"><span data-i18n="proc.2.m">+ clarity</span> <span class="arrow">↗</span></span>
+      </div>
+      <div class="step">
+        <span class="n" data-i18n="proc.3.n">Step 03</span>
+        <div class="t" data-i18n="proc.3.t">Hands-on work</div>
+        <div class="d" data-i18n="proc.3.d">Строю, аудирую или оперирую — с еженедельными созвонами и общим воркспейсом.</div>
+        <span class="metric"><span data-i18n="proc.3.m">+ revenue</span> <span class="arrow">↗</span></span>
+      </div>
+      <div class="step">
+        <span class="n" data-i18n="proc.4.n">Step 04</span>
+        <div class="t" data-i18n="proc.4.t">Handover &amp; growth</div>
+        <div class="d" data-i18n="proc.4.d">Documented playbook, KPIs in place and an optional retainer to keep momentum.</div>
+        <span class="metric"><span data-i18n="proc.4.m">Scale</span> <span class="arrow">★</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2 data-i18n-html="cta.title">Got a product, a channel, or a question? <em>Let's talk.</em></h2>
+    <div>
+      <p data-i18n="cta.sub">Почти все проекты начинаются с 30-минутной консультации. Приносите свою задачу в сыром виде — сформулируем главное и уберем второстепенное</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="cta" href="#contact" data-i18n="cta.book">Book a 30-min call <span class="arr">→</span></a>
+        <a class="cta ghost" href="mailto:nizzaev@gmail.com" data-i18n="cta.email">Email me directly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="sec-num">06</div>
+      <div>
+        <div class="sec-kicker" data-i18n="contact.kicker">Contact</div>
+        <h2 class="sec-title" data-i18n="contact.title">Tell me about your business.</h2>
+      </div>
+    </div>
+
+    <form id="contact-form" class="form-grid" action="https://formspree.io/f/xeenwnyq" method="POST">
+      <div class="field"><label data-i18n="form.name">Name</label><input type="text" name="name" required /></div>
+      <div class="field"><label data-i18n="form.email">Email</label><input type="email" name="email" required /></div>
+      <div class="field"><label data-i18n="form.company">Company / brand</label><input type="text" name="company" /></div>
+      <div class="field">
+        <label data-i18n="form.interest">I'm interested in</label>
+        <select name="interest">
+          <option data-i18n="form.opt1">30-minute consultation — €50</option>
+          <option data-i18n="form.opt2">Growth audit — €800</option>
+          <option data-i18n="form.opt3">Scaling to US — €1,600</option>
+          <option data-i18n="form.opt4">Full product launch — €2,800</option>
+          <option data-i18n="form.opt5">Fractional Head of E-commerce</option>
+          <option data-i18n="form.opt6">Something else</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label data-i18n="form.msg">Tell me about the project</label>
+        <textarea name="message" data-i18n-attr="placeholder|form.msg.ph" placeholder="Stage, category, current channels, what's blocking growth…"></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New lead — ilianizaev.com" />
+      <div class="full form-actions">
+        <button class="cta" type="submit" data-i18n="form.submit">Send message <span class="arr">→</span></button>
+        <span class="note" data-i18n="form.note">Reply within 1–2 working days.</span>
+        <span class="note sent hide" style="color:var(--accent-2);font-weight:700" data-i18n="form.sent">✓ Got it — I'll be in touch.</span>
+        <span class="note err hide" style="color:var(--accent-deep);font-weight:700" data-i18n="form.err">Something went wrong. Please email me directly.</span>
+      </div>
+    </form>
+
+    <script>
+      (function(){
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          var btn = form.querySelector('button[type=submit]');
+          var sent = form.querySelector('.sent');
+          var err  = form.querySelector('.err');
+          sent.classList.add('hide');
+          err.classList.add('hide');
+          btn.disabled = true;
+          try {
+            var res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              sent.classList.remove('hide');
+              form.reset();
+            } else {
+              err.classList.remove('hide');
+              btn.disabled = false;
+            }
+          } catch (e) {
+            err.classList.remove('hide');
+            btn.disabled = false;
+          }
+        });
+      })();
+    </script>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#" style="margin-bottom:14px"><span class="dot"></span> Ilia Nizaev</a>
+        <p style="color:var(--muted);font-size:13px;max-width:34ch;margin:14px 0 0" data-i18n="foot.tag">
+          E-commerce, marketplace &amp; growth consulting for early-stage brands going from $0 to $1M/year — with a focus on the US market.
+        </p>
+      </div>
+      <div>
+        <h4 data-i18n="foot.work">Work with me</h4>
+        <a href="#services" data-i18n="foot.svc1">30-min consultation</a>
+        <a href="#services" data-i18n="foot.svc2">Growth audit</a>
+        <a href="#services" data-i18n="foot.svc3">Scaling to US</a>
+        <a href="#services" data-i18n="foot.svc4">Full product launch</a>
+      </div>
+      <div>
+        <h4 data-i18n="foot.expertise">Expertise</h4>
+        <a href="#expertise" data-i18n="foot.e1">Marketplaces</a>
+        <a href="#expertise" data-i18n="foot.e2">Product &amp; trends</a>
+        <a href="#expertise" data-i18n="foot.e3">US market entry</a>
+        <a href="#expertise" data-i18n="foot.e4">Branding &amp; packaging</a>
+      </div>
+      <div>
+        <h4 data-i18n="foot.contact">Contact</h4>
+        <a href="mailto:nizzaev@gmail.com">nizzaev@gmail.com</a>
+        <a href="#" data-i18n="foot.linkedin">LinkedIn</a>
+        <a href="#" data-i18n="foot.instagram">Instagram</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Ilia Nizaev · <span data-i18n="foot.role">E-commerce &amp; Marketplace Consultant</span></span>
+      <span data-i18n="foot.based">US market focus · Working worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+</body>
+</html>
