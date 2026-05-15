@@ -414,6 +414,10 @@
   .foot a{display:block;color:var(--ink-2);font-size:14px;padding:4px 0}
   .foot a:hover{color:var(--accent)}
   .copy{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:40px;padding-top:24px;color:var(--muted);font-size:12px;flex-wrap:wrap;gap:12px}
+  .foot-legal{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .foot-legal a{color:var(--ink-2);padding:0;display:inline}
+  .foot-legal a:hover{color:var(--accent)}
+  .foot-legal .sep{color:var(--muted);opacity:.6}
 
   .hide{display:none !important}
 </style>
@@ -891,6 +895,11 @@
     </div>
     <div class="copy">
       <span>© 2026 Ilia Nizaev · <span data-i18n="foot.role">E-commerce &amp; Marketplace Consultant</span></span>
+      <span class="foot-legal">
+        <a href="privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
+        <span class="sep">·</span>
+        <a href="legal.html" data-i18n="foot.legal">Legal Notice</a>
+      </span>
       <span data-i18n="foot.based">US market focus · Working worldwide</span>
     </div>
   </div>

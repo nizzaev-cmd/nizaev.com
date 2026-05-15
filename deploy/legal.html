@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Legal Notice — Ilia Nizaev</title>
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5EDDB;
+    --bg-2:#EBE0C7;
+    --bg-3:#1F1A14;
+    --ink:#1B1612;
+    --ink-2:#3D342B;
+    --muted:#8C8175;
+    --line:rgba(27,22,18,.14);
+    --accent:#E25A2B;
+    --accent-deep:#B43C12;
+    --serif:'Instrument Serif', 'Times New Roman', serif;
+    --sans:'Manrope', ui-sans-serif, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{font-size:16px;line-height:1.6;font-weight:400}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:var(--accent-deep);text-decoration:underline}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 32px;position:relative}
+  @media (max-width:680px){ .wrap{padding:0 20px} }
+
+  /* TOP BAR */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(12px);
+    background:color-mix(in oklab, var(--bg) 84%, transparent);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1240px;margin:0 auto;padding:0 32px}
+  @media (max-width:680px){ .top-inner{padding:0 20px} }
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:24px;letter-spacing:.01em;white-space:nowrap;color:var(--ink)}
+  .brand:hover{text-decoration:none;color:var(--ink)}
+  .brand .dot{
+    width:14px;height:14px;border-radius:99px;background:var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 24%, transparent);
+  }
+  .lang{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:99px;padding:4px;background:color-mix(in oklab, var(--bg-2) 70%, transparent)}
+  .lang button{
+    appearance:none;border:0;background:transparent;font:inherit;
+    font-size:12px;letter-spacing:.08em;font-weight:600;text-transform:uppercase;
+    color:var(--ink-2);padding:6px 10px;border-radius:99px;cursor:pointer;
+  }
+  .lang button.is-active{background:var(--ink);color:var(--bg)}
+
+  /* CONTENT */
+  main{padding:64px 0 96px}
+  .back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);margin-bottom:32px;font-weight:500}
+  .back:hover{color:var(--accent);text-decoration:none}
+
+  h1.page-title{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(40px, 6vw, 72px);
+    line-height:1;letter-spacing:-.012em;
+    margin:0 0 16px;
+  }
+  .updated{font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:48px}
+
+  h2{
+    font-family:var(--sans);font-weight:700;
+    font-size:22px;line-height:1.3;
+    margin:48px 0 16px;
+    color:var(--ink);
+  }
+  p{margin:0 0 16px;color:var(--ink-2)}
+  ul{margin:0 0 16px;padding-left:24px;color:var(--ink-2)}
+  ul li{margin-bottom:8px}
+  .data-block{
+    background:color-mix(in oklab, var(--bg-2) 60%, transparent);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 24px;
+    margin:16px 0;
+    font-size:15px;
+  }
+  .data-block p{margin:6px 0}
+
+  /* Footer */
+  footer{padding:40px 0 56px;border-top:1px solid var(--line);background:var(--bg)}
+  .foot-inner{max-width:1240px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px}
+  .foot-links{display:flex;gap:24px;flex-wrap:wrap}
+  .foot-links a{color:var(--ink-2);font-size:13px}
+  .foot-links a:hover{color:var(--accent);text-decoration:none}
+  @media (max-width:680px){ .foot-inner{padding:0 20px} }
+
+  .lang-block{display:none}
+  .lang-block.is-active{display:block}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>Ilia Nizaev</span>
+    </a>
+    <div class="lang" role="tablist" aria-label="Language">
+      <button data-lang="en" class="is-active">EN</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="ru">RU</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- ENGLISH VERSION -->
+    <div class="lang-block is-active" data-lang-block="en">
+      <a class="back" href="index.html">← Back to home</a>
+      <h1 class="page-title">Legal Notice</h1>
+      <div class="updated">Last update: 15.04.2026</div>
+
+      <p>In compliance with Law 34/2002 of July 11, on Services of the Information Society and Electronic Commerce (LSSI-CE), and other applicable regulations, the following information is provided:</p>
+
+      <h2>1. Identification Data</h2>
+      <div class="data-block">
+        <p><strong>Website owner:</strong> Ilia Nizaev</p>
+        <p><strong>NIE:</strong> Z2241229E</p>
+        <p><strong>Business address:</strong> 43883, Calaf, 17-19, 7, Roda de Bera, Tarragona</p>
+        <p><strong>Email:</strong> <a href="mailto:nizzaev@gmail.com">nizzaev@gmail.com</a></p>
+        <p><strong>Phone:</strong> +34675123789</p>
+        <p><strong>Website:</strong> <a href="https://nizaev.com/">https://nizaev.com/</a></p>
+      </div>
+
+      <h2>2. Terms of Use</h2>
+      <p>Accessing and browsing this website implies full and unconditional acceptance of this legal notice.</p>
+      <p>The user undertakes to use the website, its contents and services in accordance with the law, good faith, public order, and this legal notice.</p>
+
+      <h2>3. Intellectual and Industrial Property</h2>
+      <p>All website content (design, texts, images, logos, structure, source code, etc.) is the exclusive property of Ilia Nizaev, unless otherwise indicated, and is protected by intellectual and industrial property laws.</p>
+      <p>Reproduction, distribution, or modification without prior and express authorization is prohibited.</p>
+
+      <h2>4. Limitation of Liability</h2>
+      <p>The website is provided "as is", without any kind of warranty.</p>
+      <p>The owner is not responsible for errors, service interruptions, temporary unavailability, or the use of published information.</p>
+
+      <h2>5. Links to External Sites</h2>
+      <p>This website may contain links to external pages.</p>
+      <p>The owner is not responsible for the content or privacy policies of such sites, which are accessed under the user's sole responsibility.</p>
+
+      <h2>6. Applicable Law and Jurisdiction</h2>
+      <p>The applicable law shall be Spanish law.</p>
+      <p>For the resolution of any dispute related to this website, the parties submit to the <strong>Courts and Tribunals of Tarragona</strong>, unless otherwise required by law.</p>
+    </div>
+
+    <!-- SPANISH VERSION -->
+    <div class="lang-block" data-lang-block="es">
+      <a class="back" href="index.html">← Volver al inicio</a>
+      <h1 class="page-title">Aviso Legal</h1>
+      <div class="updated">Última actualización: 15.04.2026</div>
+
+      <p>En cumplimiento de lo dispuesto en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), y demás normativa aplicable, se informa lo siguiente:</p>
+
+      <h2>1. Datos identificativos</h2>
+      <div class="data-block">
+        <p><strong>Titular del sitio web:</strong> Ilia Nizaev</p>
+        <p><strong>NIE/NIF:</strong> Z2241229E</p>
+        <p><strong>NIF intracomunitario:</strong> —</p>
+        <p><strong>Dirección comercial:</strong> 43883, Calaf, 17-19, 7, Roda de Bera, Tarragona</p>
+        <p><strong>Correo electrónico:</strong> <a href="mailto:nizzaev@gmail.com">nizzaev@gmail.com</a></p>
+        <p><strong>Teléfono:</strong> +34675123789</p>
+        <p><strong>Sitio web:</strong> <a href="https://nizaev.com/">https://nizaev.com/</a></p>
+      </div>
+
+      <h2>2. Condiciones de uso</h2>
+      <p>El acceso y la navegación por este sitio web implica la aceptación plena y sin reservas del presente aviso legal.</p>
+      <p>El usuario se compromete a utilizar el sitio web, sus contenidos y servicios de forma lícita, respetuosa, de buena fe y conforme al orden público.</p>
+
+      <h2>3. Propiedad intelectual e industrial</h2>
+      <p>Todos los contenidos de este sitio web (textos, imágenes, logotipos, diseño, estructura, código fuente, etc.) son propiedad exclusiva de Ilia Nizaev, salvo que se indique lo contrario, y están protegidos por la normativa sobre propiedad intelectual e industrial.</p>
+      <p>Se prohíbe expresamente la reproducción, distribución, modificación o uso no autorizado de dichos contenidos sin permiso previo y por escrito.</p>
+
+      <h2>4. Limitación de responsabilidad</h2>
+      <p>El sitio se proporciona "tal cual", sin garantías de ningún tipo.</p>
+      <p>El titular no se responsabiliza por errores, interrupciones, falta de disponibilidad temporal, ni por el uso de la información publicada.</p>
+
+      <h2>5. Enlaces a sitios externos</h2>
+      <p>Este sitio web puede contener enlaces a páginas externas. El titular no se responsabiliza del contenido ni de las políticas de privacidad de dichos sitios, cuyo acceso se realiza bajo responsabilidad exclusiva del usuario.</p>
+
+      <h2>6. Legislación aplicable y jurisdicción</h2>
+      <p>La legislación aplicable es la española.</p>
+      <p>Para cualquier conflicto relacionado con este sitio web, las partes se someten a los <strong>Juzgados y Tribunales de Tarragona</strong>, salvo disposición legal en contrario.</p>
+    </div>
+
+    <!-- RUSSIAN VERSION (same content as English, per user's request) -->
+    <div class="lang-block" data-lang-block="ru">
+      <a class="back" href="index.html">← Back to home</a>
+      <h1 class="page-title">Legal Notice</h1>
+      <div class="updated">Last update: 15.04.2026</div>
+
+      <p>In compliance with Law 34/2002 of July 11, on Services of the Information Society and Electronic Commerce (LSSI-CE), and other applicable regulations, the following information is provided:</p>
+
+      <h2>1. Identification Data</h2>
+      <div class="data-block">
+        <p><strong>Website owner:</strong> Ilia Nizaev</p>
+        <p><strong>NIE:</strong> Z2241229E</p>
+        <p><strong>Business address:</strong> 43883, Calaf, 17-19, 7, Roda de Bera, Tarragona</p>
+        <p><strong>Email:</strong> <a href="mailto:nizzaev@gmail.com">nizzaev@gmail.com</a></p>
+        <p><strong>Phone:</strong> +34675123789</p>
+        <p><strong>Website:</strong> <a href="https://nizaev.com/">https://nizaev.com/</a></p>
+      </div>
+
+      <h2>2. Terms of Use</h2>
+      <p>Accessing and browsing this website implies full and unconditional acceptance of this legal notice.</p>
+      <p>The user undertakes to use the website, its contents and services in accordance with the law, good faith, public order, and this legal notice.</p>
+
+      <h2>3. Intellectual and Industrial Property</h2>
+      <p>All website content (design, texts, images, logos, structure, source code, etc.) is the exclusive property of Ilia Nizaev, unless otherwise indicated, and is protected by intellectual and industrial property laws.</p>
+      <p>Reproduction, distribution, or modification without prior and express authorization is prohibited.</p>
+
+      <h2>4. Limitation of Liability</h2>
+      <p>The website is provided "as is", without any kind of warranty.</p>
+      <p>The owner is not responsible for errors, service interruptions, temporary unavailability, or the use of published information.</p>
+
+      <h2>5. Links to External Sites</h2>
+      <p>This website may contain links to external pages.</p>
+      <p>The owner is not responsible for the content or privacy policies of such sites, which are accessed under the user's sole responsibility.</p>
+
+      <h2>6. Applicable Law and Jurisdiction</h2>
+      <p>The applicable law shall be Spanish law.</p>
+      <p>For the resolution of any dispute related to this website, the parties submit to the <strong>Courts and Tribunals of Tarragona</strong>, unless otherwise required by law.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Ilia Nizaev · E-commerce &amp; Marketplace Consultant</span>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="legal.html">Legal Notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const VALID = ['en','es','ru'];
+  function getLang(){
+    try { const v = localStorage.getItem('lang'); if (VALID.includes(v)) return v; } catch(e){}
+    const nav = (navigator.language||'en').slice(0,2).toLowerCase();
+    return VALID.includes(nav) ? nav : 'en';
+  }
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-block').forEach(el=>{
+      el.classList.toggle('is-active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang button').forEach(b=>{
+      b.classList.toggle('is-active', b.dataset.lang === lang);
+    });
+    const titles = {
+      en: 'Legal Notice — Ilia Nizaev',
+      es: 'Aviso Legal — Ilia Nizaev',
+      ru: 'Legal Notice — Ilia Nizaev'
+    };
+    document.title = titles[lang] || titles.en;
+    try { localStorage.setItem('lang', lang); } catch(e){}
+  }
+  setLang(getLang());
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.addEventListener('click', ()=> setLang(b.dataset.lang));
+  });
+})();
+</script>
+</body>
+</html>

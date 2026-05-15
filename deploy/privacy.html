@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Ilia Nizaev</title>
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5EDDB;
+    --bg-2:#EBE0C7;
+    --bg-3:#1F1A14;
+    --ink:#1B1612;
+    --ink-2:#3D342B;
+    --muted:#8C8175;
+    --line:rgba(27,22,18,.14);
+    --accent:#E25A2B;
+    --accent-deep:#B43C12;
+    --serif:'Instrument Serif', 'Times New Roman', serif;
+    --sans:'Manrope', ui-sans-serif, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{font-size:16px;line-height:1.6;font-weight:400}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:var(--accent-deep);text-decoration:underline}
+  ::selection{background:var(--accent);color:#fff}
+
+  .wrap{max-width:880px;margin:0 auto;padding:0 32px;position:relative}
+  @media (max-width:680px){ .wrap{padding:0 20px} }
+
+  /* TOP BAR */
+  header.top{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(12px);
+    background:color-mix(in oklab, var(--bg) 84%, transparent);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1240px;margin:0 auto;padding:0 32px}
+  @media (max-width:680px){ .top-inner{padding:0 20px} }
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:24px;letter-spacing:.01em;white-space:nowrap;color:var(--ink)}
+  .brand:hover{text-decoration:none;color:var(--ink)}
+  .brand .dot{
+    width:14px;height:14px;border-radius:99px;background:var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 24%, transparent);
+  }
+  .lang{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:99px;padding:4px;background:color-mix(in oklab, var(--bg-2) 70%, transparent)}
+  .lang button{
+    appearance:none;border:0;background:transparent;font:inherit;
+    font-size:12px;letter-spacing:.08em;font-weight:600;text-transform:uppercase;
+    color:var(--ink-2);padding:6px 10px;border-radius:99px;cursor:pointer;
+  }
+  .lang button.is-active{background:var(--ink);color:var(--bg)}
+
+  /* CONTENT */
+  main{padding:64px 0 96px}
+  .back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-2);margin-bottom:32px;font-weight:500}
+  .back:hover{color:var(--accent);text-decoration:none}
+
+  h1.page-title{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(40px, 6vw, 72px);
+    line-height:1;letter-spacing:-.012em;
+    margin:0 0 16px;
+  }
+  .updated{font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;font-weight:600;margin-bottom:48px}
+
+  h2{
+    font-family:var(--sans);font-weight:700;
+    font-size:22px;line-height:1.3;
+    margin:48px 0 16px;
+    color:var(--ink);
+  }
+  p{margin:0 0 16px;color:var(--ink-2)}
+  ul{margin:0 0 16px;padding-left:24px;color:var(--ink-2)}
+  ul li{margin-bottom:8px}
+  .data-block{
+    background:color-mix(in oklab, var(--bg-2) 60%, transparent);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 24px;
+    margin:16px 0;
+    font-size:15px;
+  }
+  .data-block p{margin:6px 0}
+
+  /* Footer */
+  footer{padding:40px 0 56px;border-top:1px solid var(--line);background:var(--bg)}
+  .foot-inner{max-width:1240px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px}
+  .foot-links{display:flex;gap:24px;flex-wrap:wrap}
+  .foot-links a{color:var(--ink-2);font-size:13px}
+  .foot-links a:hover{color:var(--accent);text-decoration:none}
+  @media (max-width:680px){ .foot-inner{padding:0 20px} }
+
+  .lang-block{display:none}
+  .lang-block.is-active{display:block}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>Ilia Nizaev</span>
+    </a>
+    <div class="lang" role="tablist" aria-label="Language">
+      <button data-lang="en" class="is-active">EN</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="ru">RU</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- ENGLISH VERSION -->
+    <div class="lang-block is-active" data-lang-block="en">
+      <a class="back" href="index.html">← Back to home</a>
+      <h1 class="page-title">Privacy Policy</h1>
+      <div class="updated">Last update: 15.04.2026</div>
+
+      <h2>1. Data Controller</h2>
+      <p>In accordance with Regulation (EU) 2016/679 (General Data Protection Regulation — GDPR) and Organic Law 3/2018 on Data Protection and Digital Rights Guarantee, it is hereby informed that this website is managed by:</p>
+      <div class="data-block">
+        <p><strong>Full name:</strong> Ilia Nizaev</p>
+        <p><strong>NIE:</strong> Z2241229E</p>
+        <p><strong>Business address:</strong> 43883, Calaf, 17-19, 7, Roda de Bera, Tarragona</p>
+        <p><strong>Email:</strong> <a href="mailto:nizzaev@gmail.com">nizzaev@gmail.com</a></p>
+        <p><strong>Phone:</strong> +34675123789</p>
+        <p><strong>Website:</strong> <a href="https://nizaev.com/">https://nizaev.com/</a></p>
+      </div>
+
+      <h2>2. Personal Data Collected</h2>
+      <p>This website does not collect or process any personal data from users.</p>
+      <p>There are no contact forms, subscriptions, comments, or any other mechanisms for gathering personal information.</p>
+
+      <h2>3. Use of Cookies</h2>
+      <p>This website only uses technical cookies necessary for its proper operation. These cookies may include:</p>
+      <ul>
+        <li>Session identifier</li>
+        <li>Display preferences</li>
+        <li>Basic navigation functions</li>
+      </ul>
+      <p>These cookies:</p>
+      <ul>
+        <li>Do not collect personal information</li>
+        <li>Are not used for advertising or analytics</li>
+        <li>Are not shared with third parties</li>
+      </ul>
+      <p>Users can configure their browsers to block or delete these cookies, although this may affect the website's functionality.</p>
+
+      <h2>4. Disclosure of Data to Third Parties</h2>
+      <p>Since no personal data is collected, no information is disclosed to third parties.</p>
+
+      <h2>5. Users' Rights</h2>
+      <p>As no personal data is processed, the rights of access, rectification, deletion, restriction, or portability do not apply.</p>
+
+      <h2>6. Security Measures</h2>
+      <p>This website is hosted on a platform that ensures basic technical measures to provide a safe and stable experience.</p>
+      <p>No identifiable user information is stored.</p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>We reserve the right to update this policy in the event of legal or technical changes.</p>
+      <p>It is recommended to review this section periodically.</p>
+    </div>
+
+    <!-- SPANISH VERSION -->
+    <div class="lang-block" data-lang-block="es">
+      <a class="back" href="index.html">← Volver al inicio</a>
+      <h1 class="page-title">Política de Privacidad</h1>
+      <div class="updated">Última actualización: 15.04.2026</div>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>De conformidad con el Reglamento (UE) 2016/679 (Reglamento General de Protección de Datos — RGPD) y la Ley Orgánica 3/2018 de Protección de Datos y Garantía de los Derechos Digitales, se informa que esta página web es gestionada por:</p>
+      <div class="data-block">
+        <p><strong>Nombre completo:</strong> Ilia Nizaev</p>
+        <p><strong>NIE/NIF:</strong> Z2241229E</p>
+        <p><strong>Dirección comercial:</strong> 43883, Calaf, 17-19, 7, Roda de Bera, Tarragona</p>
+        <p><strong>Sitio web:</strong> <a href="https://nizaev.com/">https://nizaev.com/</a></p>
+      </div>
+
+      <h2>2. Datos personales recogidos</h2>
+      <p>Este sitio web no recoge ni trata datos personales de los usuarios.</p>
+      <p>No hay formularios de contacto, comentarios, suscripciones ni ningún otro mecanismo de recogida de información personal.</p>
+
+      <h2>3. Uso de cookies</h2>
+      <p>Este sitio web utiliza únicamente cookies técnicas esenciales para su funcionamiento. Estas cookies pueden incluir:</p>
+      <ul>
+        <li>Identificador de sesión</li>
+        <li>Preferencias de visualización</li>
+        <li>Funciones básicas de navegación</li>
+      </ul>
+      <p>Estas cookies:</p>
+      <ul>
+        <li>No recogen información personal</li>
+        <li>No se utilizan con fines publicitarios ni analíticos</li>
+        <li>No se comparten con terceros</li>
+      </ul>
+      <p>El usuario puede configurar su navegador para bloquear o eliminar estas cookies, aunque ello puede afectar al funcionamiento del sitio web.</p>
+
+      <h2>4. Cesión de datos a terceros</h2>
+      <p>Dado que no se recogen datos personales, no se realiza ninguna cesión de datos a terceros.</p>
+
+      <h2>5. Derechos de los usuarios</h2>
+      <p>Al no tratarse datos personales, los derechos de acceso, rectificación, supresión, limitación o portabilidad no son aplicables.</p>
+
+      <h2>6. Medidas de seguridad</h2>
+      <p>Este sitio está alojado en una plataforma que aplica medidas técnicas básicas de seguridad para garantizar una experiencia estable y protegida.</p>
+      <p>No se almacena información identificativa del usuario.</p>
+
+      <h2>7. Cambios en esta política</h2>
+      <p>Nos reservamos el derecho de actualizar esta política en caso de cambios normativos o técnicos.</p>
+      <p>Se recomienda revisar esta sección de forma periódica.</p>
+    </div>
+
+    <!-- RUSSIAN VERSION (same content as English, per user's request) -->
+    <div class="lang-block" data-lang-block="ru">
+      <a class="back" href="index.html">← Back to home</a>
+      <h1 class="page-title">Privacy Policy</h1>
+      <div class="updated">Last update: 15.04.2026</div>
+
+      <h2>1. Data Controller</h2>
+      <p>In accordance with Regulation (EU) 2016/679 (General Data Protection Regulation — GDPR) and Organic Law 3/2018 on Data Protection and Digital Rights Guarantee, it is hereby informed that this website is managed by:</p>
+      <div class="data-block">
+        <p><strong>Full name:</strong> Ilia Nizaev</p>
+        <p><strong>NIE:</strong> Z2241229E</p>
+        <p><strong>Business address:</strong> 43883, Calaf, 17-19, 7, Roda de Bera, Tarragona</p>
+        <p><strong>Email:</strong> <a href="mailto:nizzaev@gmail.com">nizzaev@gmail.com</a></p>
+        <p><strong>Phone:</strong> +34675123789</p>
+        <p><strong>Website:</strong> <a href="https://nizaev.com/">https://nizaev.com/</a></p>
+      </div>
+
+      <h2>2. Personal Data Collected</h2>
+      <p>This website does not collect or process any personal data from users.</p>
+      <p>There are no contact forms, subscriptions, comments, or any other mechanisms for gathering personal information.</p>
+
+      <h2>3. Use of Cookies</h2>
+      <p>This website only uses technical cookies necessary for its proper operation. These cookies may include:</p>
+      <ul>
+        <li>Session identifier</li>
+        <li>Display preferences</li>
+        <li>Basic navigation functions</li>
+      </ul>
+      <p>These cookies:</p>
+      <ul>
+        <li>Do not collect personal information</li>
+        <li>Are not used for advertising or analytics</li>
+        <li>Are not shared with third parties</li>
+      </ul>
+      <p>Users can configure their browsers to block or delete these cookies, although this may affect the website's functionality.</p>
+
+      <h2>4. Disclosure of Data to Third Parties</h2>
+      <p>Since no personal data is collected, no information is disclosed to third parties.</p>
+
+      <h2>5. Users' Rights</h2>
+      <p>As no personal data is processed, the rights of access, rectification, deletion, restriction, or portability do not apply.</p>
+
+      <h2>6. Security Measures</h2>
+      <p>This website is hosted on a platform that ensures basic technical measures to provide a safe and stable experience.</p>
+      <p>No identifiable user information is stored.</p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>We reserve the right to update this policy in the event of legal or technical changes.</p>
+      <p>It is recommended to review this section periodically.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Ilia Nizaev · E-commerce &amp; Marketplace Consultant</span>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="legal.html">Legal Notice</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const VALID = ['en','es','ru'];
+  function getLang(){
+    try { const v = localStorage.getItem('lang'); if (VALID.includes(v)) return v; } catch(e){}
+    const nav = (navigator.language||'en').slice(0,2).toLowerCase();
+    return VALID.includes(nav) ? nav : 'en';
+  }
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-block').forEach(el=>{
+      el.classList.toggle('is-active', el.dataset.langBlock === lang);
+    });
+    document.querySelectorAll('.lang button').forEach(b=>{
+      b.classList.toggle('is-active', b.dataset.lang === lang);
+    });
+    // Update page title per language
+    const titles = {
+      en: 'Privacy Policy — Ilia Nizaev',
+      es: 'Política de Privacidad — Ilia Nizaev',
+      ru: 'Privacy Policy — Ilia Nizaev'
+    };
+    document.title = titles[lang] || titles.en;
+    try { localStorage.setItem('lang', lang); } catch(e){}
+  }
+  setLang(getLang());
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.addEventListener('click', ()=> setLang(b.dataset.lang));
+  });
+})();
+</script>
+</body>
+</html>
