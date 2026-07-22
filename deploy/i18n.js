@@ -69,7 +69,7 @@
       'foot.tag':'E-commerce, marketplace and growth consulting for early-stage brands going from $0 to $1M a year — with a focus on the US market.',
       'foot.work':'Work with me','foot.svc1':'30-min consultation','foot.svc2':'Growth audit','foot.svc3':'Scaling to US','foot.svc4':'Full product launch',
       'foot.expertise':'Expertise','foot.e1':'Marketplaces','foot.e2':'Product & trends','foot.e3':'US market entry','foot.e4':'Branding & packaging',
-      'foot.contact':'Contact','foot.linkedin':'LinkedIn','foot.instagram':'Instagram',
+      'foot.contact':'Contact','foot.linkedin':'LinkedIn','foot.instagram':'Telegram',
       'foot.role':'E-commerce & Marketplace Consultant','foot.based':'US market focus · Working worldwide',
       'foot.privacy':'Privacy Policy','foot.legal':'Legal Notice'
     },
@@ -138,7 +138,7 @@
       'foot.tag':'Consultoría de e-commerce, marketplaces y crecimiento para marcas en fase inicial que van de 0 a 1 M$/año — con foco en el mercado de EE. UU.',
       'foot.work':'Trabajar conmigo','foot.svc1':'Consulta 30 min','foot.svc2':'Auditoría de crecimiento','foot.svc3':'Escalado a EE. UU.','foot.svc4':'Lanzamiento completo',
       'foot.expertise':'Experiencia','foot.e1':'Marketplaces','foot.e2':'Producto y tendencias','foot.e3':'Entrada a EE. UU.','foot.e4':'Branding y packaging',
-      'foot.contact':'Contacto','foot.linkedin':'LinkedIn','foot.instagram':'Instagram',
+      'foot.contact':'Contacto','foot.linkedin':'LinkedIn','foot.instagram':'Telegram',
       'foot.role':'Consultor de E-commerce y Marketplaces','foot.based':'Enfoque en EE. UU. · Trabajo en todo el mundo',
       'foot.privacy':'Política de Privacidad','foot.legal':'Aviso Legal'
     },
@@ -207,7 +207,7 @@
       'foot.tag':'Консалтинг по e-commerce, маркетплейсам и росту для ранних брендов, идущих с 0 до $1M в год — с фокусом на рынок США.',
       'foot.work':'Работать со мной','foot.svc1':'Консультация 30 минут','foot.svc2':'Аудит бизнеса','foot.svc3':'Выход на рынок США','foot.svc4':'Полный запуск продукта',
       'foot.expertise':'Экспертиза','foot.e1':'Маркетплейсы','foot.e2':'Продукт и тренды','foot.e3':'Выход в США','foot.e4':'Брендинг и упаковка',
-      'foot.contact':'Контакты','foot.linkedin':'LinkedIn','foot.instagram':'Instagram',
+      'foot.contact':'Контакты','foot.linkedin':'LinkedIn','foot.instagram':'Telegram',
       'foot.role':'Консультант по e-commerce и маркетплейсам','foot.based':'Фокус на США · работаю по всему миру',
       'foot.privacy':'Privacy Policy','foot.legal':'Legal Notice'
     }
